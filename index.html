@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CamProbe Results</title>
+    <style>
+        :root {
+            --column-gap: 12px;
+            --sample-gap: 34px;
+            --prompt-gap: -10px;
+            --motion-font-size: 18px;
+            --motion-line-gap: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 60vw;
+            max-width: 1400px;
+            min-width: 720px;
+            margin: auto;
+            padding: 24px 0 40px;
+        }
+
+        .section-title {
+            margin: 0 0 22px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .page-header {
+            margin-bottom: 44px;
+        }
+
+        .page-title {
+            margin: 0 0 16px;
+            text-align: center;
+            font-size: 38px;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+
+        .page-authors {
+            margin: 0 0 3px;
+            text-align: center;
+            font-size: 21px;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .page-subtitle {
+            margin: 0;
+            text-align: center;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .sample-block {
+            margin-bottom: var(--sample-gap);
+        }
+
+        .top-section {
+            margin-bottom: 54px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            margin-top: -5px;
+            gap: var(--column-gap);
+        }
+
+        .cap {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .cap_in {
+            flex: 1;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .video-column {
+            flex: 1;
+        }
+
+        video,
+        img,
+        .motion-card {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 6px;
+        }
+
+        video {
+            aspect-ratio: 832 / 480;
+            object-fit: cover;
+            background: #000;
+            overflow: hidden;
+            clip-path: inset(0 round 6px);
+        }
+
+        img {
+            aspect-ratio: 832 / 480;
+            object-fit: cover;
+            background: #000;
+        }
+
+        .motion-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--motion-font-size);
+            font-weight: 600;
+            text-align: center;
+            padding: 0;
+            box-sizing: border-box;
+            background: transparent;
+            border: 0;
+            line-height: 1.35;
+        }
+
+        .block-set {
+            margin-top: var(--prompt-gap);
+            margin-bottom: 10px;
+        }
+
+        .prompt-text {
+            padding: 0 4px;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                width: min(92vw, 900px);
+                min-width: 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                width: min(96vw, 560px);
+            }
+
+            .row,
+            .cap {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1 class="page-title">Probing into Camera Control of Video Models</h1>
+        <p class="page-authors">Anonymous Authors</p>
+        <p class="page-subtitle">supplementary videos</p>
+    </div>
+
+    <div class="sample-block top-section">
+        <h1 class="section-title">Multi-view Video Generation</h1>
+        <div class="row">
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/3d/3d-0.mp4" type="video/mp4"></video></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/3d/3d-1.mp4" type="video/mp4"></video></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/3d/3d-2.mp4" type="video/mp4"></video></div>
+        </div>
+        <div class="row">
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/3d/3d-3.mp4" type="video/mp4"></video></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/3d/3d-4.mp4" type="video/mp4"></video></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/3d/3d-5.mp4" type="video/mp4"></video></div>
+        </div>
+        <div class="block-set">
+            <p class="prompt-text">Our method can guide base models generate pseudo multi-view videos (results generated using Wan2.2-I2V-A14B).</p>
+        </div>
+    </div>
+
+    <div class="sample-block top-section">
+        <h1 class="section-title">Basic Motions</h1>
+        <div class="cap">
+            <div class="cap_in">Tilt Up</div>
+            <div class="cap_in">Pan Right</div>
+            <div class="cap_in">Truck Left</div>
+        </div>
+        <div class="row">
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/basic/basic_tilt_up.mp4" type="video/mp4"></video></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/basic/basic_pan_right.mp4" type="video/mp4"></video></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/basic/basic_truck_left.mp4" type="video/mp4"></video></div>
+        </div>
+        <div class="cap">
+            <div class="cap_in">Zoom Out</div>
+            <div class="cap_in">Arc Left</div>
+            <div class="cap_in">Arc Right</div>
+        </div>
+        <div class="row">
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/basic/basic_zoom_out.mp4" type="video/mp4"></video></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/basic/basic_arc_left.mp4" type="video/mp4"></video></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/basic/basic_arc_right.mp4" type="video/mp4"></video></div>
+        </div>
+        <div class="block-set">
+            <p class="prompt-text">Videos with basic motions generated using Wan2.2-I2V-A14B.</p>
+        </div>
+    </div>
+
+    <div class="sample-block top-section">
+        <h1 class="section-title">Complex Trajectories</h1>
+        <div class="row">
+            <div class="video-column"><img src="assets/complex/1.png" alt="Complex trajectory 1"></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/complex/complex-1-2.mp4" type="video/mp4"></video></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/complex/complex-1-1.mp4" type="video/mp4"></video></div>
+        </div>
+        <div class="row">
+            <div class="video-column"><img src="assets/complex/2.png" alt="Complex trajectory 2"></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/complex/complex-2-2.mp4" type="video/mp4"></video></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/complex/complex-2-1.mp4" type="video/mp4"></video></div>
+        </div>
+        <div class="row">
+            <div class="video-column"><img src="assets/complex/3.png" alt="Complex trajectory 3"></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/complex/complex-3-2.mp4" type="video/mp4"></video></div>
+            <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/complex/complex-3-1.mp4" type="video/mp4"></video></div>
+        </div>
+        <div class="block-set">
+            <p class="prompt-text">Videos with complex motions generated using Wan2.2-I2V-A14B.</p>
+        </div>
+    </div>
+
+    <div class="sample-block top-section">
+        <h1 class="section-title">Qualitative Comparison with Other Methods</h1>
+
+        <div class="sample-block">
+            <div class="cap">
+                <div class="cap_in">Reference</div>
+                <div class="cap_in">TrajectoryCrafter</div>
+                <div class="cap_in">ReCamMaster</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/ref/truck_right_ref.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/trajectorycrafter/truck_right_trajectorycrafter.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/recammaster/truck_right_recammaster.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="cap">
+                <div class="cap_in"></div>
+                <div class="cap_in">GEN3C</div>
+                <div class="cap_in">CamProbe</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><div class="motion-card">Motion:<br>Truck Right</div></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/gen3c/truck_right_gen3c.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/camprobe/truck_right_camprobe.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A 3D model of a 1800s victorian house.</p></div>
+        </div>
+
+        <div class="sample-block">
+            <div class="cap">
+                <div class="cap_in">Reference</div>
+                <div class="cap_in">TrajectoryCrafter</div>
+                <div class="cap_in">ReCamMaster</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/ref/pan_left_ref.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/trajectorycrafter/pan_left_trajectorycrafter.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/recammaster/pan_left_recammaster.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="cap">
+                <div class="cap_in"></div>
+                <div class="cap_in">GEN3C</div>
+                <div class="cap_in">CamProbe</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><div class="motion-card">Motion:<br>Pan Left</div></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/gen3c/pan_left_gen3c.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/camprobe/pan_left_camprobe.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A car moving slowly on an empty street, rainy evening</p></div>
+        </div>
+
+        <div class="sample-block">
+            <div class="cap">
+                <div class="cap_in">Reference</div>
+                <div class="cap_in">TrajectoryCrafter</div>
+                <div class="cap_in">ReCamMaster</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/ref/pedestal_down_ref.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/trajectorycrafter/pedestal_down_trajectorycrafter.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/recammaster/pedestal_down_recammaster.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="cap">
+                <div class="cap_in"></div>
+                <div class="cap_in">GEN3C</div>
+                <div class="cap_in">CamProbe</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><div class="motion-card">Motion:<br>Pedestal Down</div></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/gen3c/pedestal_down_gen3c.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/camprobe/pedestal_down_camprobe.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> An astronaut is riding a horse in the space in a photorealistic style.</p></div>
+        </div>
+
+        <div class="sample-block">
+            <div class="cap">
+                <div class="cap_in">Reference</div>
+                <div class="cap_in">TrajectoryCrafter</div>
+                <div class="cap_in">ReCamMaster</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/ref/tilt_up_ref.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/trajectorycrafter/tilt_up_trajectorycrafter.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/recammaster/tilt_up_recammaster.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="cap">
+                <div class="cap_in"></div>
+                <div class="cap_in">GEN3C</div>
+                <div class="cap_in">CamProbe</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><div class="motion-card">Motion:<br>Tilt Up</div></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/gen3c/tilt_up_gen3c.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/camprobe/tilt_up_camprobe.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A boat sailing leisurely along the Seine River with the Eiffel Tower in background by Vincent van Gogh</p></div>
+        </div>
+
+        <div class="sample-block">
+            <div class="cap">
+                <div class="cap_in">Reference</div>
+                <div class="cap_in">TrajectoryCrafter</div>
+                <div class="cap_in">ReCamMaster</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/ref/zoom_in_ref.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/trajectorycrafter/zoom_in_trajectorycrafter.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/recammaster/zoom_in_recammaster.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="cap">
+                <div class="cap_in"></div>
+                <div class="cap_in">GEN3C</div>
+                <div class="cap_in">CamProbe</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><div class="motion-card">Motion:<br>Zoom In</div></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/gen3c/zoom_in_gen3c.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/camprobe/zoom_in_camprobe.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A panda playing on a swing set</p></div>
+        </div>
+
+        <div class="sample-block">
+            <div class="cap">
+                <div class="cap_in">Reference</div>
+                <div class="cap_in">TrajectoryCrafter</div>
+                <div class="cap_in">ReCamMaster</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/ref/zoom_out_ref.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/trajectorycrafter/zoom_out_trajectorycrafter.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/recammaster/zoom_out_recammaster.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="cap">
+                <div class="cap_in"></div>
+                <div class="cap_in">GEN3C</div>
+                <div class="cap_in">CamProbe</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><div class="motion-card">Motion:<br>Zoom Out</div></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/gen3c/zoom_out_gen3c.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/camprobe/zoom_out_camprobe.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> Aerial panoramic video from a drone of a fantasy land.</p></div>
+        </div>
+
+        <div class="sample-block">
+            <div class="cap">
+                <div class="cap_in">Reference</div>
+                <div class="cap_in">TrajectoryCrafter</div>
+                <div class="cap_in">ReCamMaster</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/ref/arc_left_ref.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/trajectorycrafter/arc_left_trajectorycrafter.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/recammaster/arc_left_recammaster.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="cap">
+                <div class="cap_in"></div>
+                <div class="cap_in">GEN3C</div>
+                <div class="cap_in">CamProbe</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><div class="motion-card">Motion:<br>Arc Left</div></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/gen3c/arc_left_gen3c.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/camprobe/arc_left_camprobe.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A robot DJ is playing the turntable, in heavy raining futuristic tokyo rooftop cyberpunk night, sci-fi, fantasy</p></div>
+        </div>
+
+        <div class="sample-block">
+            <div class="cap">
+                <div class="cap_in">Reference</div>
+                <div class="cap_in">TrajectoryCrafter</div>
+                <div class="cap_in">ReCamMaster</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/ref/arc_right_ref.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/trajectorycrafter/arc_right_trajectorycrafter.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/recammaster/arc_right_recammaster.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="cap">
+                <div class="cap_in"></div>
+                <div class="cap_in">GEN3C</div>
+                <div class="cap_in">CamProbe</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><div class="motion-card">Motion:<br>Arc Right</div></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/gen3c/arc_right_gen3c.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/camprobe/arc_right_camprobe.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> Flying through fantasy landscapes.</p></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
