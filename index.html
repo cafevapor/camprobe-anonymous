@@ -76,6 +76,18 @@
             gap: var(--column-gap);
         }
 
+        .row.two-up {
+            justify-content: center;
+        }
+
+        .row.two-up .video-column {
+            flex: 0 1 calc((100% - var(--column-gap)) / 2);
+        }
+
+        .row.three-up .video-column {
+            flex: 0 1 calc((100% - (2 * var(--column-gap))) / 3);
+        }
+
         .cap {
             display: flex;
             justify-content: space-between;
@@ -86,7 +98,11 @@
         .cap_in {
             flex: 1;
             text-align: center;
-            font-weight: bold;
+            font-weight: 400;
+        }
+
+        .cap_in.reference-label {
+            font-weight: 700;
         }
 
         .video-column {
@@ -235,11 +251,111 @@
     </div>
 
     <div class="sample-block top-section">
+        <h1 class="section-title">Probing into Multi-view Capabilities</h1>
+
+        <div class="sample-block">
+            <div class="cap">
+                <div class="cap_in reference-label">Reference</div>
+                <div class="cap_in">HunyuanVideo-1.5-480P-I2V</div>
+                <div class="cap_in">Wan2.2-I2V-A14B</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><img src="assets/multi-view/multi-view-1-reference.png" alt="Multi-view reference 1"></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-1-HunyuanVideo.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-1-WanI2V.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="cap">
+                <div class="cap_in">CogVideoX1.5-5B-I2V</div>
+                <div class="cap_in">LTX-2.3-22b-dev</div>
+                <div class="cap_in">Wan2.2-TI2V-5B</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-1-CogVideo.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-1-LTX.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-1-WanTI2V.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="block-set"><p class="prompt-text"><strong>Motion:</strong> Arc right.</p></div>
+        </div>
+
+        <div class="sample-block">
+            <div class="cap">
+                <div class="cap_in reference-label">Reference</div>
+                <div class="cap_in">HunyuanVideo-1.5-480P-I2V</div>
+                <div class="cap_in">Wan2.2-I2V-A14B</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><img src="assets/multi-view/multi-view-2-reference.png" alt="Multi-view reference 2"></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-2-HunyuanVideo.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-2-WanI2V.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="cap">
+                <div class="cap_in">CogVideoX1.5-5B-I2V</div>
+                <div class="cap_in">LTX-2.3-22b-dev</div>
+                <div class="cap_in">Wan2.2-TI2V-5B</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-2-CogVideo.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-2-LTX.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-2-WanTI2V.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="block-set"><p class="prompt-text"><strong>Motion:</strong> Arc right.</p></div>
+        </div>
+
+        <div class="sample-block">
+            <div class="cap">
+                <div class="cap_in reference-label">Reference</div>
+                <div class="cap_in">HunyuanVideo-1.5-480P-I2V</div>
+                <div class="cap_in">Wan2.2-I2V-A14B</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><img src="assets/multi-view/multi-view-3-reference.png" alt="Multi-view reference 3"></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-3-HunyuanVideo.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-3-WanI2V.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="cap">
+                <div class="cap_in">CogVideoX1.5-5B-I2V</div>
+                <div class="cap_in">LTX-2.3-22b-dev</div>
+                <div class="cap_in">Wan2.2-TI2V-5B</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-3-CogVideo.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-3-LTX.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-3-WanTI2V.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="block-set"><p class="prompt-text"><strong>Motion:</strong> Arc left.</p></div>
+        </div>
+
+        <div class="sample-block">
+            <div class="cap">
+                <div class="cap_in reference-label">Reference</div>
+                <div class="cap_in">HunyuanVideo-1.5-480P-I2V</div>
+                <div class="cap_in">Wan2.2-I2V-A14B</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><img src="assets/multi-view/multi-view-4-reference.png" alt="Multi-view reference 4"></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-4-HunyuanVideo.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-4-WanI2V.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="cap">
+                <div class="cap_in">CogVideoX1.5-5B-I2V</div>
+                <div class="cap_in">LTX-2.3-22b-dev</div>
+                <div class="cap_in">Wan2.2-TI2V-5B</div>
+            </div>
+            <div class="row">
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-4-CogVideo.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-4-LTX.mp4" type="video/mp4"></video></div>
+                <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/multi-view/multi-view-4-WanTI2V.mp4" type="video/mp4"></video></div>
+            </div>
+            <div class="block-set"><p class="prompt-text"><strong>Motion:</strong> Arc right.</p></div>
+        </div>
+    </div>
+
+    <div class="sample-block top-section">
         <h1 class="section-title">Qualitative Comparison with Other Methods</h1>
 
         <div class="sample-block">
             <div class="cap">
-                <div class="cap_in">Reference</div>
+                <div class="cap_in reference-label">Reference</div>
                 <div class="cap_in">TrajectoryCrafter</div>
                 <div class="cap_in">ReCamMaster</div>
             </div>
@@ -263,7 +379,7 @@
 
         <div class="sample-block">
             <div class="cap">
-                <div class="cap_in">Reference</div>
+                <div class="cap_in reference-label">Reference</div>
                 <div class="cap_in">TrajectoryCrafter</div>
                 <div class="cap_in">ReCamMaster</div>
             </div>
@@ -282,12 +398,12 @@
                 <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/gen3c/pan_left_gen3c.mp4" type="video/mp4"></video></div>
                 <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/camprobe/pan_left_camprobe.mp4" type="video/mp4"></video></div>
             </div>
-            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A car moving slowly on an empty street, rainy evening</p></div>
+            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A car moving slowly on an empty street, rainy evening.</p></div>
         </div>
 
         <div class="sample-block">
             <div class="cap">
-                <div class="cap_in">Reference</div>
+                <div class="cap_in reference-label">Reference</div>
                 <div class="cap_in">TrajectoryCrafter</div>
                 <div class="cap_in">ReCamMaster</div>
             </div>
@@ -311,7 +427,7 @@
 
         <div class="sample-block">
             <div class="cap">
-                <div class="cap_in">Reference</div>
+                <div class="cap_in reference-label">Reference</div>
                 <div class="cap_in">TrajectoryCrafter</div>
                 <div class="cap_in">ReCamMaster</div>
             </div>
@@ -330,12 +446,12 @@
                 <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/gen3c/tilt_up_gen3c.mp4" type="video/mp4"></video></div>
                 <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/camprobe/tilt_up_camprobe.mp4" type="video/mp4"></video></div>
             </div>
-            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A boat sailing leisurely along the Seine River with the Eiffel Tower in background by Vincent van Gogh</p></div>
+            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A boat sailing leisurely along the Seine River with the Eiffel Tower in background by Vincent van Gogh.</p></div>
         </div>
 
         <div class="sample-block">
             <div class="cap">
-                <div class="cap_in">Reference</div>
+                <div class="cap_in reference-label">Reference</div>
                 <div class="cap_in">TrajectoryCrafter</div>
                 <div class="cap_in">ReCamMaster</div>
             </div>
@@ -354,12 +470,12 @@
                 <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/gen3c/zoom_in_gen3c.mp4" type="video/mp4"></video></div>
                 <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/camprobe/zoom_in_camprobe.mp4" type="video/mp4"></video></div>
             </div>
-            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A panda playing on a swing set</p></div>
+            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A panda playing on a swing set.</p></div>
         </div>
 
         <div class="sample-block">
             <div class="cap">
-                <div class="cap_in">Reference</div>
+                <div class="cap_in reference-label">Reference</div>
                 <div class="cap_in">TrajectoryCrafter</div>
                 <div class="cap_in">ReCamMaster</div>
             </div>
@@ -383,7 +499,7 @@
 
         <div class="sample-block">
             <div class="cap">
-                <div class="cap_in">Reference</div>
+                <div class="cap_in reference-label">Reference</div>
                 <div class="cap_in">TrajectoryCrafter</div>
                 <div class="cap_in">ReCamMaster</div>
             </div>
@@ -402,12 +518,12 @@
                 <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/gen3c/arc_left_gen3c.mp4" type="video/mp4"></video></div>
                 <div class="video-column"><video controls autoplay loop muted playsinline><source src="assets/comparison/camprobe/arc_left_camprobe.mp4" type="video/mp4"></video></div>
             </div>
-            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A robot DJ is playing the turntable, in heavy raining futuristic tokyo rooftop cyberpunk night, sci-fi, fantasy</p></div>
+            <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> A robot DJ is playing the turntable, in heavy raining futuristic tokyo rooftop cyberpunk night, sci-fi, fantasy.</p></div>
         </div>
 
         <div class="sample-block">
             <div class="cap">
-                <div class="cap_in">Reference</div>
+                <div class="cap_in reference-label">Reference</div>
                 <div class="cap_in">TrajectoryCrafter</div>
                 <div class="cap_in">ReCamMaster</div>
             </div>
@@ -429,6 +545,7 @@
             <div class="block-set"><p class="prompt-text"><strong>Prompt:</strong> Flying through fantasy landscapes.</p></div>
         </div>
     </div>
+
 </div>
 </body>
 </html>
